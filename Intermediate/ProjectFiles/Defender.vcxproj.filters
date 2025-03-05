@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Defender.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Defender.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\DefenderEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
+    <Filter Include="Source\Defender">
+      <UniqueIdentifier>{53F05796-0E5B-34F8-BCAC-E2424AF2C6A3}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Defender\Defender.Build.cs">
+      <Filter>Source\Defender</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Defender\Defender.cpp">
+      <Filter>Source\Defender</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Defender\Defender.h">
+      <Filter>Source\Defender</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Private">
+      <UniqueIdentifier>{1A85A580-4DC8-3A11-98F5-CD56E17E0D3E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\DF_Enum.cpp">
+      <Filter>Source\Defender\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\DF_Struct.cpp">
+      <Filter>Source\Defender\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor">
+      <UniqueIdentifier>{C9E2EB90-7DAB-36CB-97CF-DC144655650C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\DA_Actor.cpp">
+      <Filter>Source\Defender\Private\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\DA_Character.cpp">
+      <Filter>Source\Defender\Private\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\DO_AnimInstance.cpp">
+      <Filter>Source\Defender\Private\Actor</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor\Actor">
+      <UniqueIdentifier>{E84F37C2-D573-3864-B940-CF6B98A39D28}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Actor\DA_HomingTarget.cpp">
+      <Filter>Source\Defender\Private\Actor\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Actor\DA_Projectile.cpp">
+      <Filter>Source\Defender\Private\Actor\Actor</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor\Actor\FieldItem">
+      <UniqueIdentifier>{ED31A479-4F70-3A4E-8E3D-8E446A1DF09D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Actor\FieldItem\DA_Buff.cpp">
+      <Filter>Source\Defender\Private\Actor\Actor\FieldItem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Actor\FieldItem\DA_BuffGenerator.cpp">
+      <Filter>Source\Defender\Private\Actor\Actor\FieldItem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Actor\FieldItem\DA_Interaction.cpp">
+      <Filter>Source\Defender\Private\Actor\Actor\FieldItem</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor\Level">
+      <UniqueIdentifier>{CCA49929-9627-36D4-A033-73C86E8FF09D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Level\DA_LevelScript.cpp">
+      <Filter>Source\Defender\Private\Actor\Level</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor\Monster">
+      <UniqueIdentifier>{1F6F6936-5AF8-392C-B28A-595D4EDF5704}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Monster\DA_Monster.cpp">
+      <Filter>Source\Defender\Private\Actor\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Monster\DOA_Monster.cpp">
+      <Filter>Source\Defender\Private\Actor\Monster</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor\Monster\AI">
+      <UniqueIdentifier>{E30A7B3F-EC42-3BC0-BDC7-4FEA52FA44BD}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Monster\AI\DA_AIController.cpp">
+      <Filter>Source\Defender\Private\Actor\Monster\AI</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor\Player">
+      <UniqueIdentifier>{584AFCB3-929A-39F4-95B8-B3515FC57C63}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Player\DA_Player.cpp">
+      <Filter>Source\Defender\Private\Actor\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Player\DA_PlayerController.cpp">
+      <Filter>Source\Defender\Private\Actor\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Player\DA_PlayerState.cpp">
+      <Filter>Source\Defender\Private\Actor\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Player\DOA_Player.cpp">
+      <Filter>Source\Defender\Private\Actor\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Actor\Player\Controller">
+      <UniqueIdentifier>{6A36B624-58CC-3F1E-AC3F-2E7CDF1E3665}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Player\Controller\DAPC_InGame.cpp">
+      <Filter>Source\Defender\Private\Actor\Player\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Actor\Player\Controller\DAPC_Select.cpp">
+      <Filter>Source\Defender\Private\Actor\Player\Controller</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\AI">
+      <UniqueIdentifier>{B5BAC649-4079-35F8-B14E-87B5A513AE52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Defender\Private\AI\Decorator">
+      <UniqueIdentifier>{BA978D49-807F-36F9-B027-385B6C67A29E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Decorator\DB_Decorator.cpp">
+      <Filter>Source\Defender\Private\AI\Decorator</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\AI\Service">
+      <UniqueIdentifier>{E6329F62-5F71-330F-98DB-514DBA981078}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Service\DBS_FindTarget.cpp">
+      <Filter>Source\Defender\Private\AI\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Service\DBS_IsInAttackRange.cpp">
+      <Filter>Source\Defender\Private\AI\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Service\DBS_SelectAttack.cpp">
+      <Filter>Source\Defender\Private\AI\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Service\DB_Service.cpp">
+      <Filter>Source\Defender\Private\AI\Service</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\AI\Task">
+      <UniqueIdentifier>{46BFED9C-4715-3BC6-9D5B-1CE5B8EDA712}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Task\DBT_Attack.cpp">
+      <Filter>Source\Defender\Private\AI\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Task\DBT_FindPatrolPos.cpp">
+      <Filter>Source\Defender\Private\AI\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Task\DBT_MonsterMoveTo.cpp">
+      <Filter>Source\Defender\Private\AI\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Task\DBT_MonsterWait.cpp">
+      <Filter>Source\Defender\Private\AI\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Task\DBT_TurnToTarget.cpp">
+      <Filter>Source\Defender\Private\AI\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\AI\Task\DB_TaskNode.cpp">
+      <Filter>Source\Defender\Private\AI\Task</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Component">
+      <UniqueIdentifier>{C56D4A73-718B-31C7-9BAE-1A51CCE194FD}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\DC_ActorComponent.cpp">
+      <Filter>Source\Defender\Private\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\DC_PawnComponent.cpp">
+      <Filter>Source\Defender\Private\Component</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Component\Interaction">
+      <UniqueIdentifier>{AF5AFB53-A423-308F-A6FC-200A2D4E08CC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Interaction\DC_InteractionComponent.cpp">
+      <Filter>Source\Defender\Private\Component\Interaction</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Component\Player">
+      <UniqueIdentifier>{389785C4-F52F-37DD-9B19-E81CE967DBAF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Player\DC_Action.cpp">
+      <Filter>Source\Defender\Private\Component\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Player\DC_Inventory.cpp">
+      <Filter>Source\Defender\Private\Component\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Player\DC_Targeting.cpp">
+      <Filter>Source\Defender\Private\Component\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Player\DC_Weapon.cpp">
+      <Filter>Source\Defender\Private\Component\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Component\Share">
+      <UniqueIdentifier>{525C3E58-BE58-32C2-BFAC-65596383A46A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Share\DC_AnimMontage.cpp">
+      <Filter>Source\Defender\Private\Component\Share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Share\DC_Minimap.cpp">
+      <Filter>Source\Defender\Private\Component\Share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Share\DC_ProjectileManager.cpp">
+      <Filter>Source\Defender\Private\Component\Share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Share\DC_Skill.cpp">
+      <Filter>Source\Defender\Private\Component\Share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Component\Share\DC_Stat.cpp">
+      <Filter>Source\Defender\Private\Component\Share</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Interface">
+      <UniqueIdentifier>{1D64E77D-85C5-328B-BE6B-F8FB3817AE6B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Interface\DI_ObjectPoolingActor.cpp">
+      <Filter>Source\Defender\Private\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Interface\DI_UseableItem.cpp">
+      <Filter>Source\Defender\Private\Interface</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Item">
+      <UniqueIdentifier>{A4246160-39C8-307D-9093-FB9AB1CADD7E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Item\DA_Item.cpp">
+      <Filter>Source\Defender\Private\Item</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Server">
+      <UniqueIdentifier>{18C86B99-8A13-3626-841A-1161B9B108E1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Server\DA_GameInstance.cpp">
+      <Filter>Source\Defender\Private\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Server\DA_GameMode.cpp">
+      <Filter>Source\Defender\Private\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Server\DA_GameState.cpp">
+      <Filter>Source\Defender\Private\Server</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Skills">
+      <UniqueIdentifier>{30ED3567-D12D-3AA5-830E-263A91D91342}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Skills\DO_SkillBase.cpp">
+      <Filter>Source\Defender\Private\Skills</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Skills\Active">
+      <UniqueIdentifier>{C3C5207E-BBDD-360E-9AE0-B3677513CCF7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Skills\Active\DO_ActiveBase.cpp">
+      <Filter>Source\Defender\Private\Skills\Active</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Skills\Active\Area">
+      <UniqueIdentifier>{FD54FAB6-4E9D-3333-886D-C43AB79ECE6B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Skills\Active\Area\DOSA_Area.cpp">
+      <Filter>Source\Defender\Private\Skills\Active\Area</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Skills\Active\Timer">
+      <UniqueIdentifier>{EC520DDB-7A1F-394E-B532-16EA21826FD7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Skills\Active\Timer\DOSA_Timer.cpp">
+      <Filter>Source\Defender\Private\Skills\Active\Timer</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Skills\Passive">
+      <UniqueIdentifier>{C9B48936-571D-3BCB-AF30-6E9655855CB6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Skills\Passive\DO_PassiveBase.cpp">
+      <Filter>Source\Defender\Private\Skills\Passive</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Widget">
+      <UniqueIdentifier>{2E2923CD-4CD9-3677-B7AB-1ACE4F0F5399}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\DW_PlayerWidget.cpp">
+      <Filter>Source\Defender\Private\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\DW_UserWidget.cpp">
+      <Filter>Source\Defender\Private\Widget</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Widget\InGame">
+      <UniqueIdentifier>{CFC3BDDA-75B7-30E5-B9E2-9608FAB3FCC6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\DWP_Defeated.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\DWP_ReturnMenu.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\DWP_Scope.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\DWP_StageClear.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\DWP_StageStart.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Widget\InGame\Information">
+      <UniqueIdentifier>{E20FF2A5-4C37-3CFC-988A-B18E0013CB9E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Information\DWP_EquipDropButton.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Information\DWP_Infomation.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Information\DWP_MainWidget.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Information\DWP_PotionSlot.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Information\DWP_SkillSlot.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Information\DWP_WeaponSlot.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Information</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Widget\InGame\Monster">
+      <UniqueIdentifier>{E6E33F4B-40D5-37EA-899D-8D0AF0E8B7B3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Monster\DWP_FloatingDamage.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Monster\DW_MonsterHP.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Monster</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Widget\InGame\Shop">
+      <UniqueIdentifier>{D54CDC7A-5165-3CC8-BF1D-5470A12A5D08}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Shop\DWP_BuySellButton.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Shop\DWP_Count.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Shop\DWP_ItemSlot.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\InGame\Shop\DWP_Shop.cpp">
+      <Filter>Source\Defender\Private\Widget\InGame\Shop</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Private\Widget\Select">
+      <UniqueIdentifier>{0DBF02BF-C471-36C7-87C1-88EFC5871F00}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\Select\DWP_CharacterSelectSlot.cpp">
+      <Filter>Source\Defender\Private\Widget\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\Select\DWP_PopupBox.cpp">
+      <Filter>Source\Defender\Private\Widget\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\Select\DWP_SelectSkillSlot.cpp">
+      <Filter>Source\Defender\Private\Widget\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\Select\DWP_StartCharacter.cpp">
+      <Filter>Source\Defender\Private\Widget\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\Select\DWP_StartLoad.cpp">
+      <Filter>Source\Defender\Private\Widget\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\Select\DWP_StartMain.cpp">
+      <Filter>Source\Defender\Private\Widget\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Defender\Private\Widget\Select\DWP_StartSkill.cpp">
+      <Filter>Source\Defender\Private\Widget\Select</Filter>
+    </ClCompile>
+    <Filter Include="Source\Defender\Public">
+      <UniqueIdentifier>{8DD43CBB-CDAA-3B63-8858-1F4F72934A54}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\DF_Enum.h">
+      <Filter>Source\Defender\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\DF_Struct.h">
+      <Filter>Source\Defender\Public</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor">
+      <UniqueIdentifier>{212CCB19-27F5-3DAA-A946-91592744F073}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\DA_Actor.h">
+      <Filter>Source\Defender\Public\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\DA_Character.h">
+      <Filter>Source\Defender\Public\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\DO_AnimInstance.h">
+      <Filter>Source\Defender\Public\Actor</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor\Actor">
+      <UniqueIdentifier>{6CF9F68F-C31C-31D0-A58E-2745802D3BF5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Actor\DA_HomingTarget.h">
+      <Filter>Source\Defender\Public\Actor\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Actor\DA_Projectile.h">
+      <Filter>Source\Defender\Public\Actor\Actor</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor\Actor\FieldItem">
+      <UniqueIdentifier>{6BD744CC-1D1F-39DA-94D3-47D422125E00}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Actor\FieldItem\DA_Buff.h">
+      <Filter>Source\Defender\Public\Actor\Actor\FieldItem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Actor\FieldItem\DA_BuffGenerator.h">
+      <Filter>Source\Defender\Public\Actor\Actor\FieldItem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Actor\FieldItem\DA_Interaction.h">
+      <Filter>Source\Defender\Public\Actor\Actor\FieldItem</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor\Level">
+      <UniqueIdentifier>{1DDC9C57-2190-3694-95D3-2746E466C373}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Level\DA_LevelScript.h">
+      <Filter>Source\Defender\Public\Actor\Level</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor\Monster">
+      <UniqueIdentifier>{64D1C179-F50C-395B-B333-701F99841206}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Monster\DA_Monster.h">
+      <Filter>Source\Defender\Public\Actor\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Monster\DOA_Monster.h">
+      <Filter>Source\Defender\Public\Actor\Monster</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor\Monster\AI">
+      <UniqueIdentifier>{B3260DE6-7159-31CB-937D-20D32DD4A1A5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Monster\AI\DA_AIController.h">
+      <Filter>Source\Defender\Public\Actor\Monster\AI</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor\Player">
+      <UniqueIdentifier>{28C80C94-1C37-34CA-9532-C3E93F605E6B}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Player\DA_Player.h">
+      <Filter>Source\Defender\Public\Actor\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Player\DA_PlayerController.h">
+      <Filter>Source\Defender\Public\Actor\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Player\DA_PlayerState.h">
+      <Filter>Source\Defender\Public\Actor\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Player\DOA_Player.h">
+      <Filter>Source\Defender\Public\Actor\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Actor\Player\Controller">
+      <UniqueIdentifier>{D28E127D-12CA-3460-99D4-AE8579BCD442}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Player\Controller\DAPC_InGame.h">
+      <Filter>Source\Defender\Public\Actor\Player\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Actor\Player\Controller\DAPC_Select.h">
+      <Filter>Source\Defender\Public\Actor\Player\Controller</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\AI">
+      <UniqueIdentifier>{9932B924-1ABB-3AE1-83F3-65E0904F4876}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Defender\Public\AI\Decorator">
+      <UniqueIdentifier>{CCEF80D2-6AD6-3D5C-AE90-20ACDB5BDF4A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Decorator\DB_Decorator.h">
+      <Filter>Source\Defender\Public\AI\Decorator</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\AI\Service">
+      <UniqueIdentifier>{E077EE14-FA4F-35CA-A8AF-A780D220D48A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Service\DBS_FindTarget.h">
+      <Filter>Source\Defender\Public\AI\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Service\DBS_IsInAttackRange.h">
+      <Filter>Source\Defender\Public\AI\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Service\DBS_SelectAttack.h">
+      <Filter>Source\Defender\Public\AI\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Service\DB_Service.h">
+      <Filter>Source\Defender\Public\AI\Service</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\AI\Task">
+      <UniqueIdentifier>{3E525F26-FDAB-33F5-ACE3-5F722272344A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Task\DBT_Attack.h">
+      <Filter>Source\Defender\Public\AI\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Task\DBT_FindPatrolPos.h">
+      <Filter>Source\Defender\Public\AI\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Task\DBT_MonsterMoveTo.h">
+      <Filter>Source\Defender\Public\AI\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Task\DBT_MonsterWait.h">
+      <Filter>Source\Defender\Public\AI\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Task\DBT_TurnToTarget.h">
+      <Filter>Source\Defender\Public\AI\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\AI\Task\DB_TaskNode.h">
+      <Filter>Source\Defender\Public\AI\Task</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Component">
+      <UniqueIdentifier>{2410D3F8-CA89-3FA5-8A08-B677F7CAD2DF}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\DC_ActorComponent.h">
+      <Filter>Source\Defender\Public\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\DC_PawnComponent.h">
+      <Filter>Source\Defender\Public\Component</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Component\Interaction">
+      <UniqueIdentifier>{9AE9B82D-1EE3-3CB0-B2F7-253D616D674E}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Interaction\DC_InteractionComponent.h">
+      <Filter>Source\Defender\Public\Component\Interaction</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Component\Player">
+      <UniqueIdentifier>{EE06EB85-1A6A-3B10-AC33-B4A04E5BC843}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Player\DC_Action.h">
+      <Filter>Source\Defender\Public\Component\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Player\DC_Inventory.h">
+      <Filter>Source\Defender\Public\Component\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Player\DC_Targeting.h">
+      <Filter>Source\Defender\Public\Component\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Player\DC_Weapon.h">
+      <Filter>Source\Defender\Public\Component\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Component\Share">
+      <UniqueIdentifier>{14157395-6B6F-33D8-949A-AE44F7F7BC25}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Share\DC_AnimMontage.h">
+      <Filter>Source\Defender\Public\Component\Share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Share\DC_Minimap.h">
+      <Filter>Source\Defender\Public\Component\Share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Share\DC_ProjectileManager.h">
+      <Filter>Source\Defender\Public\Component\Share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Share\DC_Skill.h">
+      <Filter>Source\Defender\Public\Component\Share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Component\Share\DC_Stat.h">
+      <Filter>Source\Defender\Public\Component\Share</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Interface">
+      <UniqueIdentifier>{ED620708-9048-30AB-AA89-B58533D6B071}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Interface\DI_ObjectPoolingActor.h">
+      <Filter>Source\Defender\Public\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Interface\DI_UseableItem.h">
+      <Filter>Source\Defender\Public\Interface</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Item">
+      <UniqueIdentifier>{F8910E4B-F292-3FC5-B88A-28B29A572138}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Item\DA_Item.h">
+      <Filter>Source\Defender\Public\Item</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Server">
+      <UniqueIdentifier>{EC0B1F94-3842-361A-ADDD-535517A88529}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Server\DA_GameInstance.h">
+      <Filter>Source\Defender\Public\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Server\DA_GameMode.h">
+      <Filter>Source\Defender\Public\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Server\DA_GameState.h">
+      <Filter>Source\Defender\Public\Server</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Skills">
+      <UniqueIdentifier>{BDC7630F-1F85-3209-B5C2-6E6AEB399F92}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Skills\DO_SkillBase.h">
+      <Filter>Source\Defender\Public\Skills</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Skills\Active">
+      <UniqueIdentifier>{98F4B5BC-BEAD-379F-AB5B-B408C7F39635}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Skills\Active\DO_ActiveBase.h">
+      <Filter>Source\Defender\Public\Skills\Active</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Skills\Active\Area">
+      <UniqueIdentifier>{2C59DD14-5934-321F-A0EE-F7777133ED1D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Skills\Active\Area\DOSA_Area.h">
+      <Filter>Source\Defender\Public\Skills\Active\Area</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Skills\Active\Timer">
+      <UniqueIdentifier>{BAD1706B-36D6-3C0A-92A6-8BE666C779ED}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Skills\Active\Timer\DOSA_Timer.h">
+      <Filter>Source\Defender\Public\Skills\Active\Timer</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Skills\Passive">
+      <UniqueIdentifier>{EB132F2D-D828-37C6-80CF-8580CE68481A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Skills\Passive\DO_PassiveBase.h">
+      <Filter>Source\Defender\Public\Skills\Passive</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Widget">
+      <UniqueIdentifier>{06E5FCC6-388D-368D-A488-54C4974D5D90}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\DW_PlayerWidget.h">
+      <Filter>Source\Defender\Public\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\DW_UserWidget.h">
+      <Filter>Source\Defender\Public\Widget</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Widget\InGame">
+      <UniqueIdentifier>{0E5E21C9-16F9-32CA-8667-C6197E89C2AA}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\DWP_Defeated.h">
+      <Filter>Source\Defender\Public\Widget\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\DWP_ReturnMenu.h">
+      <Filter>Source\Defender\Public\Widget\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\DWP_Scope.h">
+      <Filter>Source\Defender\Public\Widget\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\DWP_StageClear.h">
+      <Filter>Source\Defender\Public\Widget\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\DWP_StageStart.h">
+      <Filter>Source\Defender\Public\Widget\InGame</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Widget\InGame\Information">
+      <UniqueIdentifier>{04F16A92-B3AF-35CA-95E7-800637B7447B}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Information\DWP_EquipDropButton.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Information\DWP_Infomation.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Information\DWP_MainWidget.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Information\DWP_PotionSlot.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Information\DWP_SkillSlot.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Information\DWP_WeaponSlot.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Information</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Widget\InGame\Monster">
+      <UniqueIdentifier>{D07D8228-3A2D-3F3D-AFC8-B4CA1A09720B}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Monster\DWP_FloatingDamage.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Monster\DW_MonsterHP.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Monster</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Widget\InGame\Shop">
+      <UniqueIdentifier>{89F8C107-589B-3C91-BFEC-BC4370D51D25}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Shop\DWP_BuySellButton.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Shop\DWP_Count.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Shop\DWP_ItemSlot.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\InGame\Shop\DWP_Shop.h">
+      <Filter>Source\Defender\Public\Widget\InGame\Shop</Filter>
+    </ClInclude>
+    <Filter Include="Source\Defender\Public\Widget\Select">
+      <UniqueIdentifier>{B468A53F-4D1D-3816-9671-6505C34B5B8D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\Select\DWP_CharacterSelectSlot.h">
+      <Filter>Source\Defender\Public\Widget\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\Select\DWP_PopupBox.h">
+      <Filter>Source\Defender\Public\Widget\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\Select\DWP_SelectSkillSlot.h">
+      <Filter>Source\Defender\Public\Widget\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\Select\DWP_StartCharacter.h">
+      <Filter>Source\Defender\Public\Widget\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\Select\DWP_StartLoad.h">
+      <Filter>Source\Defender\Public\Widget\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\Select\DWP_StartMain.h">
+      <Filter>Source\Defender\Public\Widget\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Defender\Public\Widget\Select\DWP_StartSkill.h">
+      <Filter>Source\Defender\Public\Widget\Select</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

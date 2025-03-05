@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\Unreal\\UE5\\Defender\\Source\\Defender\\Defender.Build.cs",
+		"E:\\Unreal\\UE5\\Defender\\Source\\Defender.Target.cs",
+		"E:\\Unreal\\UE5\\Defender\\Source\\DefenderEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
