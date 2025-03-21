@@ -27,11 +27,15 @@ Hit 되는 Actor들의 순서가 랜덤해서 사용자가 보고 있는 몬스�
 사용 효과를 위해 멤버 함수를 static으로 구현 시 다형성을 사용할 수 없기 때문에 사용 효과를 적용하는데 어려움이 있었습니다.
 ## ✅이슈사항 해결 방법
 ### 1. 좌표계 변환
+참조 : **Source\Defender\Private\Component\Player\DC_Targeting.cpp (UDC_Targeting::LockOn)**
+
 Hit된 액터들의 위치정보를 기반으로 좌표계를 변환하여 시점에서 가장 가까운 적을 LockOn 하도록, 
 
 나아가 좌우 측으로 Target을 변경하는 기능을 추가했습니다.
 ![좌표계변환](https://github.com/DongHyeon9/TPSPortfolio_Defender/blob/master/ForREADME/TransformCoord.jpg)
 ### 2. FTickableGameObject 다중상속
+참조 : **Source\Defender\Public\Skills\DO_SkillBase.h**
+
 FTickableGameObject을 상속받은 후 일부 함수를 구현하면 WorldTick에 등록되어 Actor보다 가벼우며, 
 
 World와 관련된 함수를 사용할 수 있습니다.
@@ -42,6 +46,8 @@ World와 관련된 함수를 사용할 수 있습니다.
 
 [FTickableGameObject Github](https://github.com/DongHyeon9/Unreal/tree/World_UObjectTick)
 ### 3. 파생 클래스로 개별로 직 구현, CDO로 사용 로직 호출
+참조 : **Source\Defender\Private\Component\Player\DC_Inventory.cpp (UDC_Inventory::RegistItem)**
+
 언리얼에는 UObject마다 기본이 되는 CDO(Class Default Object)라는 것이 존재하기에 이를 활용,
 
 각 아이템의 파생 클래스에서 효과로 직을 구현하고 사용 시 CDO 객체를 통해 사용 효과를 적용했습니다.
