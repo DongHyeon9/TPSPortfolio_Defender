@@ -1,16 +1,80 @@
-# Project name : Defender
+# ▶Project name : Defender◀
 본 프로젝트는 Unreal Engine 5를 활용해 제작한 Third Person Shooting 방식의 디펜스 게임입니다.
 
-## Intro
+## ✅Intro
 - 본 프로젝트는 **코드의 재사용성**을 높히기 위해 **컴포넌트 기반으로 개발**했습니다.
 - **유지보수**(수정과 확장)에 어려움이 없도록 **Class Wrapping**과 **디자인 패턴**을 적극 활용했습니다.
 - 타인과 **원활한 협업**을 위해 **주석**, 블루프린트로의 적절한 **Serialize**, **CSV**를 통한 **데이터 관리**, **json**형식의 **데이터 입출력**을 활용했습니다.
 - 메모리 최적화를 위해 **Object Pooling**을 적용했습니다.
-- **라이브 서비 중인 게임**들을 **모티브**해 여러가지 기능들을 구현했습니다.
+- **라이브 서비스 중인 게임**들을 **모티브**해 여러가지 기능들을 구현했습니다.
 - 버전관리는 Tortoise SVN을 사용했습니다.
-## 개발기간
+## ✅개발기간
 **2023/9/1(금) ~ 2024/1/10(수)**
-## 구현 내용
+## ✅개발 시 발생했던 이슈사항
+### 1. LockOn 기능 시야 판별
+임의의 위치에서 임의의 방향을 보고 있는 플레이어에서 MultiCapsuleTrace를 사용 시
+
+Hit 되는 Actor들의 순서가 랜덤해서 사용자가 보고 있는 몬스터를 판별할 수 없었습니다.
+### 2. UObject로 스킬 구현 시 Spawn, Tick 등 일부 World와 관련된 함수 구현 불가
+최적화를 위해 UObject로 Skill을 구현했습니다.
+
+하지만 이 경우 Wolrd와 관련된 로직을 작성할 수 없습니다.(ex. 소환, 지속효과 등)
+### 3. 소모품 효과 적용
+소모품은 인벤토리에서 TMap<FString, int32>로 관리했습니다.
+
+->각 객체마다 포인터로 들고 있으면 메모리가 낭비되기에 CSV와 FString(CSV의 Row Name)과 int32(소모품의 개수)로 관리
+
+사용 효과를 위해 멤버 함수를 static으로 구현 시 다형성을 사용할 수 없기 때문에 사용 효과를 적용하는데 어려움이 있었습니다.
+## ✅이슈사항 해결 방법
+### 1. 좌표계 변환
+참조 : **Source\Defender\Private\Component\Player\DC_Targeting.cpp (UDC_Targeting::LockOn)**
+
+Hit된 액터들의 위치정보를 기반으로 좌표계를 변환하여 시점에서 가장 가까운 적을 LockOn 하도록, 
+
+나아가 좌우 측으로 Target을 변경하는 기능을 추가했습니다.
+![좌표계변환](https://github.com/DongHyeon9/TPSPortfolio_Defender/blob/master/ForREADME/TransformCoord.jpg)
+### 2. FTickableGameObject 다중상속
+참조 : **Source\Defender\Public\Skills\DO_SkillBase.h**
+
+FTickableGameObject을 상속받은 후 일부 함수를 구현하면 WorldTick에 등록되어 Actor보다 가벼우며, 
+
+World와 관련된 함수를 사용할 수 있습니다.
+
+자세한 내용은 기술 블로그와 깃허브에 기재
+
+[FTickableGameObject 포스트](https://nicenewsdb.tistory.com/99)
+
+[FTickableGameObject Github](https://github.com/DongHyeon9/Unreal/tree/World_UObjectTick)
+### 3. 파생 클래스로 개별로 직 구현, CDO로 사용 로직 호출
+참조 : **Source\Defender\Private\Component\Player\DC_Inventory.cpp (UDC_Inventory::RegistItem)**
+
+언리얼에는 UObject마다 기본이 되는 CDO(Class Default Object)라는 것이 존재하기에 이를 활용,
+
+각 아이템의 파생 클래스에서 효과로 직을 구현하고 사용 시 CDO 객체를 통해 사용 효과를 적용했습니다.
+
+이로써 메모리 절약, 인 게임 내부의 아이템 관리, CSV를 통한 외부에서 관리 세 가지를 한 번에 잡을 수 있었습니다.
+## ✅프로젝트 종료 후 알게 된 점
+### 1. 오브젝트 풀링 구현
+TQueue는 LockFree를 고려한 Node 기반 자료구조이기에 메모리 단편화로부터 자유롭지 못합니다.
+### 1. 해결
+오브젝트 풀링 구현 시 TArray를 사용해야 됩니다.
+### 2. FTimerManager::SetTimer 사용 시 Packaged 파일에서 Fatal Error 발생
+SetTimer 함수를 사용하면 원하는 시간 뒤에 이벤트를 호출할 수 있는 장점이 있습니다.
+
+하지만 FTimerDelegate::CreateLambda로 이벤트를 설정 시 Editor에선 EngineTick이 이를 관리해 줬지만 Packaged 파일에선 엔진 코드가 제거됩니다.
+
+때문에 객체가 제거되어 댕글링 포인터 이슈로 인해 Fatal Error가 발생하는 문제가 있었습니다.
+
+[관련 공식 문서](https://dev.epicgames.com/documentation/ko-kr/unreal-engine/gameplay-timers-in-unreal-engine)
+### 2-1 해결 : Delay Event를 Tick으로 구현(비추천)
+타이머를 Tick에서 카운팅, 일정 시간 뒤에 호출할 수 있게 로직을 구현하면 해결할 수 있습니다.
+
+단, 이 경우 코드의 복잡성이 증가할 수 있기에 추천하지 않습니다.
+### 2-2 해결 : 멤버 함수 포인터 바인딩(추천)
+FTimerHandle은 언리얼에서 자동으로 관리해 주는 객체이기 때문에 이를 활용해 멤버 함수를 선언,
+
+객체 포인터와 멤버 함수 포인터를 인자로 넘겨주면 객체가 사라진 후에 호출 시도 시 호출되지 않습니다.
+## ✅구현 내용
 ### 플레이어
 1. TPS 방식 이동
 2. ControlRotation에 따른 플레이어 회전(배틀그라운드 기본 캐릭터 회전)
