@@ -19,17 +19,9 @@ public:
 protected:
 
 private:
-	//Widget slot that contains character information and can be selected
-	UPROPERTY(BlueprintReadOnly, category = "Start Character", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_CharacterSelectSlot* WG_CharacterSelectSlot_1;
-
-	//Widget slot that contains character information and can be selected
-	UPROPERTY(BlueprintReadOnly, category = "Start Character", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_CharacterSelectSlot* WG_CharacterSelectSlot_2;
-
-	//Widget slot that contains character information and can be selected
-	UPROPERTY(BlueprintReadOnly, category = "Start Character", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_CharacterSelectSlot* WG_CharacterSelectSlot_3;
+	//캐릭터선택 위젯슬롯을 담고있는 배열
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Start Character", meta = (AllowPrivateAccess = true))
+	TArray<UDWP_CharacterSelectSlot*> characterSlots;
 
 	//Button to check if you can go to the skill selection screen when clicked
 	UPROPERTY(BlueprintReadOnly, category = "Start Character", meta = (BindWidget, AllowPrivateAccess = true))
@@ -50,7 +42,6 @@ private:
 	UPROPERTY()
 	ADAPC_Select*							ownerPlayerController;			//위젯을 가지고있는 플레이어 컨트롤러
 	int32									selectedIndex;					//선택한 캐릭터의 인덱스
-	TArray<UDWP_CharacterSelectSlot*>		characterSlots;					//캐릭터선택 위젯슬롯을 담고있는 배열
 
 public:
 	UDWP_StartCharacter(const FObjectInitializer& _ObjectInitializer);

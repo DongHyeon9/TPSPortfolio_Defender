@@ -76,78 +76,6 @@ private:
 	UPROPERTY(BlueprintReadOnly, category = "Information", meta = (BindWidget, AllowPrivateAccess = true))
 	UTextBlock* txt_ScoreBest;
 
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_0;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_1;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_2;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_3;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_4;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_5;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_6;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_7;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_8;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_9;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_10;
-
-	//Widget to display weapons
-	UPROPERTY(BlueprintReadOnly, category = "Weapon Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_WeaponSlot* WG_WeaponSlot_11;
-
-	//Widget to display potion
-	UPROPERTY(BlueprintReadOnly, category = "Potion Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_PotionSlot* WG_PotionSlot_0;
-
-	//Widget to display potion
-	UPROPERTY(BlueprintReadOnly, category = "Potion Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_PotionSlot* WG_PotionSlot_1;
-
-	//Widget to display potion
-	UPROPERTY(BlueprintReadOnly, category = "Potion Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_PotionSlot* WG_PotionSlot_2;
-
-	//Widget to display potion
-	UPROPERTY(BlueprintReadOnly, category = "Potion Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_PotionSlot* WG_PotionSlot_3;
-
-	//Widget to display potion
-	UPROPERTY(BlueprintReadOnly, category = "Potion Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_PotionSlot* WG_PotionSlot_4;
-
-	//Widget to display potion
-	UPROPERTY(BlueprintReadOnly, category = "Potion Slot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_PotionSlot* WG_PotionSlot_5;
-
 	//Equip or drop widget that appears when you press the potion widget or weapon widget
 	UPROPERTY(BlueprintReadWrite, category = "Equip Drop Button", meta = (AllowPrivateAccess = true))
 	UDWP_EquipDropButton* equipDropButtonWidget;
@@ -164,8 +92,13 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, category = "PotionData", meta = (AllowPrivateAccess))
 	UDataTable* itemDataTable;
 
-	TArray<UDWP_WeaponSlot*>		weaponSlots{};		//¹«±â ½½·Ô À§Á¬ÀÇ ¹è¿­
-	TArray<UDWP_PotionSlot*>		potionSlots{};		//Æ÷¼Ç ½½·Ô À§Á¬ÀÇ ¹è¿­
+	//¹«±â ½½·Ô À§Á¬ÀÇ ¹è¿­
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Weapon Slot", meta = (AllowPrivateAccess = true))
+	TArray<UDWP_WeaponSlot*> weaponSlots{};
+
+	//Æ÷¼Ç ½½·Ô À§Á¬ÀÇ ¹è¿­
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Potion Slot", meta = (AllowPrivateAccess = true))
+	TArray<UDWP_PotionSlot*> potionSlots{};
 
 public:
 	UDWP_Infomation(const FObjectInitializer& _ObjectInitializer);

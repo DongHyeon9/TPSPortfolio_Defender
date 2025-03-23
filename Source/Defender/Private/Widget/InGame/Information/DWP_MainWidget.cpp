@@ -15,6 +15,11 @@
 #include "Components/TextBlock.h"
 #include "Blueprint/WidgetTree.h"
 
+namespace MAIN_WIDGET
+{
+	constexpr uint32 SKILL_SLOT_COUNT{ 3 };
+}
+
 UDWP_MainWidget::UDWP_MainWidget(const FObjectInitializer& _ObjectInitializer):
 	Super(_ObjectInitializer)
 {
@@ -24,14 +29,13 @@ void UDWP_MainWidget::InitializeWidget()
 {
 	Super::InitializeWidget();
 
-	//모든 위젯을 가져와서 스킬 슬롯만 배열에 넣어준다
-	TArray<UWidget*> allWidgets{};
-	WidgetTree->GetAllWidgets(allWidgets);
+	//위젯을 바인딩 해준다
+	skillSlots.Reset(MAIN_WIDGET::SKILL_SLOT_COUNT);
 
-	for (auto widget : allWidgets) {
-		auto skillSlot = Cast<UDWP_SkillSlot>(widget);
-		if (skillSlot != nullptr)
-			skillSlots.Add(skillSlot);
+	for (uint32 i = 0; i < MAIN_WIDGET::SKILL_SLOT_COUNT; ++i)
+	{
+		FName currentSlotName{ FString::Printf(TEXT("WG_SkillSlot_%d"), i) };
+		skillSlots[i] = CastChecked<UDWP_SkillSlot>(GetWidgetFromName(currentSlotName));
 	}
 }
 

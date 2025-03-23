@@ -6,6 +6,12 @@
 #include "Components/Button.h"
 #include "Blueprint/WidgetTree.h"
 
+namespace START_SKILL_WIDGET
+{
+	constexpr uint32 ACTIVE_SLOT_COUNT{ 8 };
+	constexpr uint32 PASSIVE_SLOT_COUNT{ 3 };
+}
+
 UDWP_StartSkill::UDWP_StartSkill(const FObjectInitializer& _ObjectInitializer):
 	Super(_ObjectInitializer)
 {
@@ -15,14 +21,19 @@ void UDWP_StartSkill::InitializeWidget()
 {
 	Super::InitializeWidget();
 
-	//현재있는 위젯중 스킬슬롯 위젯을 가져와서 배열에 저장한다
-	TArray<UWidget*> allWidgets{};
-	WidgetTree->GetAllWidgets(allWidgets);
+	//위젯을 바인딩 해준다
+	skillSlots.Reset(START_SKILL_WIDGET::ACTIVE_SLOT_COUNT + START_SKILL_WIDGET::PASSIVE_SLOT_COUNT);
 
-	for (auto widget : allWidgets) {
-		auto skillSlot = Cast<UDWP_SelectSkillSlot>(widget);
-		if (skillSlot != nullptr)
-			skillSlots.Add(skillSlot);
+	for (uint32 i = 0; i < START_SKILL_WIDGET::ACTIVE_SLOT_COUNT; ++i)
+	{
+		FName currentSlotName{ FString::Printf(TEXT("WG_SkillSelectSlot_A_%d"), i) };
+		skillSlots[i] = CastChecked<UDWP_SelectSkillSlot>(GetWidgetFromName(currentSlotName));
+	}
+
+	for (uint32 i = 0; i < START_SKILL_WIDGET::PASSIVE_SLOT_COUNT; ++i)
+	{
+		FName currentSlotName{ FString::Printf(TEXT("WG_SkillSelectSlot_P_%d"), i) };
+		skillSlots[START_SKILL_WIDGET::ACTIVE_SLOT_COUNT + i] = CastChecked<UDWP_SelectSkillSlot>(GetWidgetFromName(currentSlotName));
 	}
 }
 

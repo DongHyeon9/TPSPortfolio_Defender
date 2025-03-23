@@ -18,49 +18,9 @@ public:
 protected:
 
 private:
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_1;
-
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_2;
-
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_3;
-
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_4;
-
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_5;
-
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_6;
-
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_7;
-
-	//Widget slot to contain active skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_A_8;
-
-	//Widget slot to contain passive skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_P_1;
-
-	//Widget slot to contain passive skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_P_2;
-
-	//Widget slot to contain passive skill information
-	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SelectSkillSlot* WG_SkillSelectSlot_P_3;
+	//스킬선택 위젯슬롯을 담고있는 배열
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Start Skill", meta = (AllowPrivateAccess = true))
+	TArray<UDWP_SelectSkillSlot*> skillSlots;
 
 	//Button to start the game after checking whether all skills have been selected when clicked
 	UPROPERTY(BlueprintReadOnly, category = "Start Skill", meta = (BindWidget, AllowPrivateAccess = true))
@@ -84,7 +44,6 @@ private:
 
 	UPROPERTY()
 	ADAPC_Select*						ownerPlayerController;			//위젯을 가지고있는 플레이어 컨트롤러
-	TArray<UDWP_SelectSkillSlot*>		skillSlots;						//스킬선택 위젯슬롯을 담고있는 배열
 
 public:
 	UDWP_StartSkill(const FObjectInitializer& _ObjectInitializer);

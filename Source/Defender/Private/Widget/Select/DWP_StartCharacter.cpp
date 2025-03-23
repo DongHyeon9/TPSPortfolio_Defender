@@ -6,6 +6,11 @@
 #include "Components/Button.h"
 #include "Blueprint/WidgetTree.h"
 
+namespace START_CHARACTER_WIDGET
+{
+	constexpr uint32 CHARACTER_SELECT_SLOT_COUNT{ 3 };
+}
+
 UDWP_StartCharacter::UDWP_StartCharacter(const FObjectInitializer& _ObjectInitializer):
 	Super(_ObjectInitializer)
 {
@@ -16,14 +21,13 @@ void UDWP_StartCharacter::InitializeWidget()
 {
 	Super::InitializeWidget();
 
-	//위젯에서 캐릭터 선택 슬롯을 가져와 배열에 담습니다
-	TArray<UWidget*> allWidgets{};
-	WidgetTree->GetAllWidgets(allWidgets);
+	//위젯을 바인딩 해준다
+	characterSlots.Reset(START_CHARACTER_WIDGET::CHARACTER_SELECT_SLOT_COUNT);
 
-	for (auto widget : allWidgets) {
-		auto characterSlot = Cast<UDWP_CharacterSelectSlot>(widget);
-		if (characterSlot != nullptr)
-			characterSlots.Add(characterSlot);
+	for (uint32 i = 0; i < START_CHARACTER_WIDGET::CHARACTER_SELECT_SLOT_COUNT; ++i)
+	{
+		FName currentSlotName{ FString::Printf(TEXT("WG_CharacterSelectSlot_%d"), i) };
+		characterSlots[i] = CastChecked<UDWP_CharacterSelectSlot>(GetWidgetFromName(currentSlotName));
 	}
 }
 

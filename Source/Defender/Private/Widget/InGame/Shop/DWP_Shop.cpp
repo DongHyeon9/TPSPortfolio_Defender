@@ -19,32 +19,38 @@
 #include "Components/CanvasPanelSlot.h"
 #include "Kismet/GameplayStatics.h"
 
+namespace SHOP_WIDGET
+{
+	constexpr uint32 ITEM_SLOT_COUNT{ 17 };
+	constexpr uint32 WEAPON_SLOT_COUNT{ 11 };
+	constexpr uint32 POTION_SLOT_COUNT{ 6 };
+}
+
 void UDWP_Shop::InitializeWidget()
 {
 	Super::InitializeWidget();
 
-	//모든 위젯을 가져와서 각 위젯의 배열에 넣어준다
-	TArray<UWidget*> allWidgets{};
-	WidgetTree->GetAllWidgets(allWidgets);
+	//위젯을 바인딩 한다
+	itemSlots.Reset(SHOP_WIDGET::ITEM_SLOT_COUNT);
+	weaponSlots.Reset(SHOP_WIDGET::WEAPON_SLOT_COUNT);
+	potionSlots.Reset(SHOP_WIDGET::POTION_SLOT_COUNT);
 
-	for (auto widget : allWidgets) {
-		auto weaponSlot = Cast<UDWP_WeaponSlot>(widget);
-		if (weaponSlot != nullptr) {
-			weaponSlots.Add(weaponSlot);
-			continue;
-		}
+	for (uint32 i = 0; i < SHOP_WIDGET::ITEM_SLOT_COUNT; ++i)
+	{
+		FName currentSlotName{ FString::Printf(TEXT("WG_ItemSlot_%d"), i) };
+		itemSlots[i] = CastChecked<UDWP_ItemSlot>(GetWidgetFromName(currentSlotName));
+	}
 
-		auto itemSlot = Cast<UDWP_ItemSlot>(widget);
-		if (itemSlot != nullptr) {
-			itemSlots.Add(itemSlot);
-			continue;
-		}
+	for (uint32 i = 0; i < SHOP_WIDGET::WEAPON_SLOT_COUNT; ++i)
+	{
+		FName currentSlotName{ FString::Printf(TEXT("WG_WeaponSlot_Info_%d"), i) };
+		weaponSlots[i] = CastChecked<UDWP_WeaponSlot>(GetWidgetFromName(currentSlotName));
+	}
 
-		auto potionSlot = Cast<UDWP_PotionSlot>(widget);
-		if (potionSlot != nullptr) {
-			potionSlots.Add(potionSlot);
-			continue;
-		}
+	for (uint32 i = 0; i < SHOP_WIDGET::POTION_SLOT_COUNT; ++i)
+	{
+		FName currentSlotName{ FString::Printf(TEXT("WG_PotionSlot_Info_%d"), i) };
+		potionSlots[i] = CastChecked<UDWP_PotionSlot>(GetWidgetFromName(currentSlotName));
 	}
 
 	itemDataTable->GetAllRows<FDFItem>(TEXT("GetAllRows"), itemDataArray);

@@ -67,17 +67,9 @@ private:
 	UPROPERTY(BlueprintReadOnly, category = "Game Info", meta = (BindWidget, AllowPrivateAccess = true))
 	UTextBlock* txt_Timer;
 
-	//Widget containing data on skills that players can use
-	UPROPERTY(BlueprintReadOnly, category = "SkillSlot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SkillSlot* WG_SkillSlot_1;
-
-	//Widget containing data on skills that players can use
-	UPROPERTY(BlueprintReadOnly, category = "SkillSlot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SkillSlot* WG_SkillSlot_2;
-
-	//Widget containing data on skills that players can use
-	UPROPERTY(BlueprintReadOnly, category = "SkillSlot", meta = (BindWidget, AllowPrivateAccess = true))
-	UDWP_SkillSlot* WG_SkillSlot_3;
+	//스킬 위젯을 담아놓은 배열
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "SkillSlot", meta = (AllowPrivateAccess = true))
+	TArray<UDWP_SkillSlot*> skillSlots{};
 
 	UPROPERTY(BlueprintReadOnly, category = "SkillSlot", meta = (BindWidget, AllowPrivateAccess = true))
 	UImage* img_Passive;
@@ -97,8 +89,6 @@ private:
 	//Name of currently equipped weapon
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, category = "Weapon", meta = (AllowPrivateAccess = true))
 	FString weaponName;
-
-	TArray<UDWP_SkillSlot*>			skillSlots{};		//스킬 위젯을 담아놓은 배열
 
 public:
 	UDWP_MainWidget(const FObjectInitializer& _ObjectInitializer);
