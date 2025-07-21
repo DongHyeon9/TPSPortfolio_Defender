@@ -10,6 +10,14 @@
 - 버전관리는 Tortoise SVN을 사용했습니다.
 ## ✅개발기간
 **2023/9/1(금) ~ 2024/1/10(수)**
+## ✅문서작성
+**최초 작성** : 2025/03/06
+
+**수정** : 2025/03/20 ~ 2025/03/21 (첨부 자료 및 추가 작성)
+
+**수정** : 2025/04/01 (추가 작성)
+
+**수정** : 2025/07/21 (내용 보충)
 ## ✅개발 시 발생했던 이슈사항
 ### 1. LockOn 기능 시야 판별
 임의의 위치에서 임의의 방향을 보고 있는 플레이어에서 MultiCapsuleTrace를 사용 시
@@ -25,6 +33,10 @@ Hit 되는 Actor들의 순서가 랜덤해서 사용자가 보고 있는 몬스�
 ->각 객체마다 포인터로 들고 있으면 메모리가 낭비되기에 CSV와 FString(CSV의 Row Name)과 int32(소모품의 개수)로 관리
 
 사용 효과를 위해 멤버 함수를 static으로 구현 시 다형성을 사용할 수 없기 때문에 사용 효과를 적용하는데 어려움이 있었습니다.
+
+- **2025/07/21 추가**
+
+  - CSV의 RowName이라면 FString보다 FName을 이용하는게 성능면에서 더 뛰어나다
 ## ✅이슈사항 해결 방법
 ### 1. 좌표계 변환
 참조 : **Source\Defender\Private\Component\Player\DC_Targeting.cpp (UDC_Targeting::LockOn)**
@@ -45,19 +57,37 @@ World와 관련된 함수를 사용할 수 있습니다.
 [FTickableGameObject 포스트](https://nicenewsdb.tistory.com/99)
 
 [FTickableGameObject Github](https://github.com/DongHyeon9/Unreal/tree/World_UObjectTick)
-### 3. 파생 클래스로 개별로 직 구현, CDO로 사용 로직 호출
+
+- **2025/07/21 추가**
+
+  - World와 관련함수(Tracing, SpawnActor등)은 GetWorld를 상속받아 내부를 구현해서 사용하거나 GetOuter를 이용해 Outer가 Actor라면 Actor의 GetWorld를 이용해서 사용할 수 있다
+
+  - Tick관련 함수는 FTSTicker를 통해 구현가능하다
+
+  - 다중 상속시 vTable의 Thunk Function의 오버헤드를 고려해야됨
+### 3. 파생 클래스로 개별로직 구현, CDO로 사용 로직 호출
 참조 : **Source\Defender\Private\Component\Player\DC_Inventory.cpp (UDC_Inventory::RegistItem)**
 
 언리얼에는 UObject마다 기본이 되는 CDO(Class Default Object)라는 것이 존재하기에 이를 활용,
 
-각 아이템의 파생 클래스에서 효과로 직을 구현하고 사용 시 CDO 객체를 통해 사용 효과를 적용했습니다.
+각 아이템의 파생 클래스에서 효과로직을 구현하고 사용 시 CDO 객체를 통해 사용 효과를 적용했습니다.
 
 이로써 메모리 절약, 인 게임 내부의 아이템 관리, CSV를 통한 외부에서 관리 세 가지를 한 번에 잡을 수 있었습니다.
+
+- **2025/07/21 추가**
+
+  - CDO는 객체 생성 시 사용되는 기본 Object 이기에 Mutable로 사용하다 수정이 일어나면 게임 전체에 영향을 줄 수 있기 때문에 사용에 신중해야됨
+
+  - 본 프로젝트의 경우 CDO보단 UObject or Native Struct(인벤토리 저장용, 실 사용 로직)와 AActor(필드 드랍)을 나눠서 적용하는게 바람직하다고 판단됨
 ## ✅프로젝트 종료 후 알게 된 점
 ### 1. 오브젝트 풀링 구현
 TQueue는 LockFree를 고려한 Node 기반 자료구조이기에 메모리 단편화로부터 자유롭지 못합니다.
 ### 1. 해결
 오브젝트 풀링 구현 시 TArray를 사용해야 됩니다.
+
+- **2025/07/21 추가**
+
+  - 언리얼은 객체 생성시 NewObject를 통해 Heap메모리를 할당하기 때문에 메모리 단편화까지 고려된 오브젝트 풀링을 만들려면 커스텀 Allocator를 만들어야 된다
 ### 2. FTimerManager::SetTimer 사용 시 Packaged 파일에서 Fatal Error 발생
 SetTimer 함수를 사용하면 원하는 시간 뒤에 이벤트를 호출할 수 있는 장점이 있습니다.
 
@@ -74,6 +104,12 @@ SetTimer 함수를 사용하면 원하는 시간 뒤에 이벤트를 호출할 �
 FTimerHandle은 언리얼에서 자동으로 관리해 주는 객체이기 때문에 이를 활용해 멤버 함수를 선언,
 
 객체 포인터와 멤버 함수 포인터를 인자로 넘겨주면 객체가 사라진 후에 호출 시도 시 호출되지 않습니다.
+
+- **2025/07/21 추가**
+
+  - 본 프로젝트에서 CreateLambda사용 시 캡처 구문을 this로 제작 -> 이 경우 맴버 함수의 기본 컨벤션인 __thiscall이 호출될때 this가 nullptr이기 때문에 메모리 Access Error발생으로 인한 Fatal Error
+
+  - CreateLambda사용시 캡처구문을 TWeakObjectPtr을 사용해 람다 함수 안에서 Validation Check 진행 후 사용하면 이를 방지 할 수 있다
 ## ✅구현 내용
 ### 기능
 1. json을 활용한 데이터 송수신(레벨이동, Save, Load)
